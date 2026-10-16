@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance History</title>
+</head>
+<body>
+    <h1>Attendance History</h1>
+    <a href="{% url 'mark_attendance' %}">Mark Attendance</a>
+    <br><br>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Student Name</th>
+            <th>Status</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.student.name }}</td>
+            <td>{{ record.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
